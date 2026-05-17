@@ -38,11 +38,13 @@ from pandas.plotting import scatter_matrix
 from matplotlib import font_manager as font_manager
 from datetime import datetime,timedelta
 import plotly.figure_factory as ff
+from pathlib import Path
 os.chdir("C:\\Mike's Stuff\\Hockey Data\\Five-Year Data")
 #%%
               ### Read In 5v5 Data
 
-alltrack = pd.read_excel('Tracking2126.xlsx', sheet_name = 'CleanedColumns')
+csv_path = Path(__file__).parent.parent/'data'/'2126Tracking.csv'
+alltrack = pd.read_csv('Tracking2126.csv')
 #%%
               ### Replace spaces with _ and replace 'ARI' with 'UTA' and replace 'C/L/R' with 'F'
 
